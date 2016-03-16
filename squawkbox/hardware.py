@@ -33,7 +33,7 @@ class SquawkBoxHardware(object):
         RPIO.setup(self.button_pin, RPIO.IN, pull_up_down=RPIO.PUD_DOWN)
         self.matrix = led.matrix()
         if callback is not None:
-            set_button_callback(callback)
+            self.set_button_callback(callback)
         RPIO.wait_for_interrupts(threaded=True)
 
     def set_button_callback(self, callback):
